@@ -14,8 +14,19 @@ import { LoggingMiddleware } from './middleware/logging/logging.middleware';
       // faz com que o limite seja de 100 requisições por minuto
       throttlers: [
         {
-          ttl: 60000,
-          limit: 100,
+          name: 'short',
+          ttl: 1000, // 1 segundo
+          limit: 10, // 10 requisições por segundo
+        },
+        {
+          name: 'medium',
+          ttl: 60000, // 1 minuto
+          limit: 100, // 100 requisições por minuto
+        },
+        {
+          name: 'long',
+          ttl: 900000, // 15 minutos
+          limit: 1000, // 1000 requisições por 15 minutos
         },
       ],
     }),
