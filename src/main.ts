@@ -47,8 +47,8 @@ async function bootstrap() {
       'X-Requested-With',
       'Accept',
       'Origin',
-      'Acess-Control-Request-Method',
-      'Acess-Control-Request-Headers',
+      'Access-Control-Request-Method',
+      'Access-Control-Request-Headers',
     ],
     credentials: true,
     maxAge: 86400, // 24 horas
